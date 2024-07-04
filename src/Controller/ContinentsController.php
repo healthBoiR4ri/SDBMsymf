@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class MainController extends AbstractController
+class ContinentsController extends AbstractController
 {
-    #[Route('/', name: 'app_main')]
+    #[Route('/', name: 'app_continents')]
     public function index(): Response
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
+        return $this->render('continents/index.html.twig', [
+            'controller_name' => 'ContinentsController',
         ]);
     }
 }
