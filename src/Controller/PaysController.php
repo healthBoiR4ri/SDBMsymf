@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Pays;
-use App\Form\PaysType;
+use App\Form\Pays1Type;
 use App\Repository\PaysRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,7 +26,7 @@ class PaysController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $pay = new Pays();
-        $form = $this->createForm(PaysType::class, $pay);
+        $form = $this->createForm(Pays1Type::class, $pay);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +53,7 @@ class PaysController extends AbstractController
     #[Route('/{id}/edit', name: 'app_pays_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Pays $pay, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(PaysType::class, $pay);
+        $form = $this->createForm(Pays1Type::class, $pay);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
