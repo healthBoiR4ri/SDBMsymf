@@ -2,19 +2,40 @@
 
 {% block title %}Hello MainController!{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .example-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 100% de la hauteur de la vue */
+            margin: 0; /* Retirer les marges */
+            font: 18px/1.5 sans-serif;
+            background-image: url('/img/gamme-bieres-artisanales-se-dresse-fond-bar-flou_157027-4025.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .animated-title {
+            font-size: 4em; /* Plus grand */
+            font-weight: bold;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+            color: white; /* Couleur du texte */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombrage pour le texte */
+        }
+        
+        /* Animation CSS */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/SDBMsymf/src/Controller/MainController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/SDBMsymf/templates/main/index.html.twig</code></li>
-    </ul>
+    <h1 class="animated-title">SDBM SYMFONY</h1>
 </div>
 {% endblock %}

@@ -29,7 +29,7 @@ try {
 /////////////////////////////////////////
 define("SGBD_SERVER_DESTINATION", "127.0.0.1");
 define("SGBD_PORT_DESTINATION", "3306");
-define("SGBD_BDD_DESTINATION", "sdbm_sf");
+define("SGBD_BDD_DESTINATION", "sdbmsymf");
 define("SGBD_USER_DESTINATION", "root");
 define("SGBD_PSWD_DESTINATION", "");
 
